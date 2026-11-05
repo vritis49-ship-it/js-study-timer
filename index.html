@@ -3,19 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Focus Timer</title>
+    <title>Cosmic Focus Timer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="glass-card">
+    <canvas id="sky"></canvas>
+    <div class="nebula"></div>
+
+    <main class="glass-card">
+        <a class="back" href="https://vritis49-ship-it.github.io/star-bound/">← Back to portfolio</a>
         <h2>Deep Focus Timer</h2>
-        <div id="display">25:00</div>
+
+        <div class="modes">
+            <button class="mode active" data-mode="focus">Focus</button>
+            <button class="mode" data-mode="short">Short Break</button>
+            <button class="mode" data-mode="long">Long Break</button>
+        </div>
+
+        <div class="ring-wrap">
+            <svg viewBox="0 0 260 260" class="ring">
+                <circle class="ring-bg" cx="130" cy="130" r="110"></circle>
+                <circle class="ring-progress" id="ring" cx="130" cy="130" r="110"></circle>
+            </svg>
+            <div class="ring-text">
+                <div id="display">25:00</div>
+                <div id="status">Ready to focus</div>
+            </div>
+        </div>
+
         <div class="controls">
-            <button id="start">Start</button>
+            <button id="start" class="primary">Start</button>
             <button id="pause">Pause</button>
             <button id="reset">Reset</button>
         </div>
-    </div>
+
+        <p class="sessions">Sessions completed: <strong id="sessions">0</strong> ✦</p>
+    </main>
+
     <script src="script.js"></script>
 </body>
-</html>s
+</html>
